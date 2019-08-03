@@ -12,7 +12,7 @@
     grid-template-rows: auto;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: auto;
     padding: 1rem;
     box-sizing: border-box;
