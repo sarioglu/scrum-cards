@@ -20,4 +20,4 @@
   }
 </style>
 
-<button class="card">{number}</button>
+<button class="card" on:click>{number}</button>

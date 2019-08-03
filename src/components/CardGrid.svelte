@@ -2,6 +2,18 @@
   import Card from './Card.svelte'
 
   import { currentCardSet } from '../store/cards.js'
+
+  let selectedCard = null
+  let showCard = false
+
+  const selectCard = number => {
+    selectedCard = number
+  }
+
+  const resetSelection = () => {
+    selectedCard = null
+    showCard = false
+  }
 </script>
 
 <style>
@@ -44,6 +56,6 @@
 
 <div class="grid">
   {#each $currentCardSet as number}
-    <Card {number} />
+    <Card {number} on:click={() => selectCard(number)} />
   {/each}
 </div>
