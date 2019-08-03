@@ -9,13 +9,12 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
 
     width: 100%;
-    height: 100vh;
-    margin: auto;
+    margin: 0 auto;
     padding: 1rem;
     box-sizing: border-box;
+    flex: 1;
   }
 
   @media (min-width: 640px) {
