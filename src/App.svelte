@@ -1,11 +1,9 @@
 <script>
-  export let name
+  import CardGrid from './components/CardGrid.svelte'
 </script>
 
 <style>
-  h1 {
-    color: purple;
-  }
+
 </style>
 
-<h1>Hello {name}!</h1>
+<CardGrid />
