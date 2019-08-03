@@ -13,3 +13,9 @@ export const cardSets = readable({
 })
 
 export const currentCardSetName = writable(CARD_SET_NAMES.CLASSICAL)
+
+export const currentCardSet = derived(
+  [cardSets, currentCardSetName],
+  ([$cardSets, $currentCardSetName]) => $cardSets[$currentCardSetName],
+  [],
+)
