@@ -14,7 +14,6 @@
 <style>
   .modal {
     width: 100%;
-    height: 30%;
     padding: 1rem 2rem;
 
     position: absolute;
