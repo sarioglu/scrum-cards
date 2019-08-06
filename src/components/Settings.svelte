@@ -2,23 +2,14 @@
   import { get } from 'svelte/store'
   import { CARD_SET_NAMES, currentCardSetName } from '../store/cards.js'
 
+  import Backdrop from './Backdrop.svelte'
+
   let selectedCardSetName = get(currentCardSetName)
 
   export let onClose = () => {}
 </script>
 
 <style>
-  .backdrop {
-    width: 100vw;
-    height: 100vh;
-
-    position: absolute;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 999;
-  }
-
   .modal {
     width: 100%;
     height: 30%;
@@ -54,7 +45,7 @@
   }
 </style>
 
-<div class="backdrop" on:click={() => onClose()}>
+<Backdrop {onClose}>
   <div class="modal" on:click|stopPropagation={() => {}}>
     <div class="title">Settings</div>
     <form
@@ -72,4 +63,4 @@
       <button class="submit-button" type="submit">Save</button>
     </form>
   </div>
-</div>
+</Backdrop>
