@@ -7,7 +7,7 @@
 </script>
 
 <style>
-  div {
+  .backdrop {
     width: 100vw;
     height: 100vh;
 
@@ -19,6 +19,8 @@
   }
 </style>
 
-<div on:click={close}>
-  <slot />
+<div class="backdrop" on:click={close}>
+  <div on:click|stopPropagation={() => {}}>
+    <slot />
+  </div>
 </div>
