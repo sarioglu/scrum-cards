@@ -1,5 +1,7 @@
 <script>
   import { get } from 'svelte/store'
+  import { fly } from 'svelte/transition'
+
   import { CARD_SET_NAMES, currentCardSetName } from '../store/cards.js'
 
   import Backdrop from './Backdrop.svelte'
@@ -46,7 +48,7 @@
 </style>
 
 <Backdrop on:close={onClose}>
-  <div class="modal" on:click|stopPropagation={() => {}}>
+  <div class="modal" transition:fly={{ y: 300 }} on:click|stopPropagation={() => {}}>
     <div class="title">Settings</div>
     <form
       on:submit|preventDefault={() => {
