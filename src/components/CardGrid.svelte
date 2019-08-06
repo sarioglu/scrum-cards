@@ -1,5 +1,8 @@
 <script>
+  import { fly } from 'svelte/transition'
+
   import Card from './Card.svelte'
+  import Backdrop from './Backdrop.svelte'
 
   import { currentCardSet } from '../store/cards.js'
 
@@ -13,6 +16,14 @@
   const resetSelection = () => {
     selectedCard = null
     showCard = false
+  }
+
+  const toggleShowCard = () => {
+    if (showCard) {
+      resetSelection()
+    } else {
+      showCard = true
+    }
   }
 </script>
 
@@ -52,6 +63,14 @@
       max-width: 1280px;
     }
   }
+
+  .selected-card {
+    display: grid;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+  }
 </style>
 
 <div class="grid">
@@ -59,3 +78,11 @@
     <Card {number} on:select={selectCard} />
   {/each}
 </div>
+
+{#if selectedCard}
+  <Backdrop on:close={resetSelection}>
+    <div class="selected-card" transition:fly={{ y: 300 }}>
+      <Card number={selectedCard} selected show={showCard} on:select={toggleShowCard} />
+    </div>
+  </Backdrop>
+{/if}

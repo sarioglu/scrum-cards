@@ -9,6 +9,8 @@
     })
 
   export let number
+  export let selected = false
+  export let show = true
 </script>
 
 <style>
@@ -27,6 +29,14 @@
   .card:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
+
+  .selected {
+    font-size: 10rem;
+  }
+
+  .selected.hide {
+    color: transparent;
+  }
 </style>
 
-<button class="card" on:click={select}>{number}</button>
+<button class={`card ${selected ? 'selected' : ''} ${show ? '' : 'hide'}`} on:click={select}>{number}</button>
