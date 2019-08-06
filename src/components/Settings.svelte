@@ -20,10 +20,12 @@
   }
 
   .modal {
-    width: 80%;
-    height: 50%;
-    margin: 40% 10%;
+    width: 100%;
+    height: 30%;
     padding: 1rem 2rem;
+
+    position: absolute;
+    bottom: 0;
 
     border-radius: 0.5rem;
     background-color: #ffffff;
