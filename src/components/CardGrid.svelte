@@ -6,8 +6,8 @@
   let selectedCard = null
   let showCard = false
 
-  const selectCard = number => {
-    selectedCard = number
+  const selectCard = event => {
+    selectedCard = event.detail.number
   }
 
   const resetSelection = () => {
@@ -56,6 +56,6 @@
 
 <div class="grid">
   {#each $currentCardSet as number}
-    <Card {number} on:click={() => selectCard(number)} />
+    <Card {number} on:select={selectCard} />
   {/each}
 </div>

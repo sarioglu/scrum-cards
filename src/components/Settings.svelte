@@ -45,7 +45,7 @@
   }
 </style>
 
-<Backdrop {onClose}>
+<Backdrop on:close={onClose}>
   <div class="modal" on:click|stopPropagation={() => {}}>
     <div class="title">Settings</div>
     <form

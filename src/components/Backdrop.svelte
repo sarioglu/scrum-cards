@@ -1,5 +1,9 @@
 <script>
-  export let onClose = () => {}
+  import { createEventDispatcher } from 'svelte'
+
+  const dispatch = createEventDispatcher()
+
+  const close = () => dispatch('close')
 </script>
 
 <style>
@@ -15,6 +19,6 @@
   }
 </style>
 
-<div on:click={() => onClose()}>
+<div on:click={close}>
   <slot />
 </div>

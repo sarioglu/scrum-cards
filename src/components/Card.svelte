@@ -1,4 +1,13 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
+
+  const dispatch = createEventDispatcher()
+
+  const select = () =>
+    dispatch('select', {
+      number,
+    })
+
   export let number
 </script>
 
@@ -20,4 +29,4 @@
   }
 </style>
 
-<button class="card" on:click>{number}</button>
+<button class="card" on:click={select}>{number}</button>
