@@ -1,0 +1,73 @@
+<script>
+  import { get } from 'svelte/store'
+  import { CARD_SET_NAMES, currentCardSetName } from '../store/cards.js'
+
+  let selectedCardSetName = get(currentCardSetName)
+
+  export let onClose = () => {}
+</script>
+
+<style>
+  .backdrop {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+
+  .modal {
+    width: 80%;
+    height: 50%;
+    margin: 40% 10%;
+    padding: 1rem 2rem;
+
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .title {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .radio-button {
+    display: block;
+    padding: 0.25rem 0;
+    margin: 0.25rem 0;
+  }
+
+  .submit-button {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: #3182ce;
+    color: #ffffff;
+  }
+</style>
+
+<div class="backdrop" on:click={() => onClose()}>
+  <div class="modal" on:click|stopPropagation={() => {}}>
+    <div class="title">Settings</div>
+    <form
+      on:submit|preventDefault={() => {
+        currentCardSetName.set(selectedCardSetName)
+        onClose()
+      }}>
+      {#each Object.values(CARD_SET_NAMES) as cardSetName}
+        <label class="radio-button">
+          <input type="radio" bind:group={selectedCardSetName} value={cardSetName} />
+          {cardSetName}
+        </label>
+      {/each}
+
+      <button class="submit-button" type="submit">Save</button>
+    </form>
+  </div>
+</div>

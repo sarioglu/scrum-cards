@@ -1,5 +1,7 @@
 <script>
+  import Settings from './Settings.svelte'
 
+  let settingsOpen = false
 </script>
 
 <style>
@@ -11,7 +13,7 @@
     padding: 1rem 2rem;
 
     background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid #e2e8f0;
   }
 
   .icon {
@@ -31,5 +33,17 @@
 <div class="app-bar">
   <div class="icon" />
   <div class="title">Scrum Poker</div>
-  <button class="icon">⚙️</button>
+  <button
+    class="icon"
+    on:click={() => {
+      settingsOpen = true
+    }}>
+    ⚙️
+  </button>
 </div>
+{#if settingsOpen}
+  <Settings
+    onClose={() => {
+      settingsOpen = false
+    }} />
+{/if}

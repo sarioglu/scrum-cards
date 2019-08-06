@@ -1,9 +1,9 @@
 import { readable, writable, derived } from 'svelte/store'
 
 export const CARD_SET_NAMES = {
-  CLASSICAL: 'classical',
-  FIBONACCI: 'fibonacci',
-  TSHIRT: 'tshirt',
+  CLASSICAL: 'Classical',
+  FIBONACCI: 'Fibonacci',
+  TSHIRT: 'T-Shirt Sizes',
 }
 
 export const cardSets = readable({
