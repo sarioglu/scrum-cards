@@ -38,7 +38,8 @@
   }
 
   .submit-button {
-    margin-top: 2rem;
+    width: 100%;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     background-color: #3182ce;
