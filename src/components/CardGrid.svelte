@@ -2,6 +2,7 @@
   import { fly } from 'svelte/transition'
 
   import Card from './Card.svelte'
+  import SelectedCard from './SelectedCard.svelte'
   import Backdrop from './Backdrop.svelte'
 
   import { currentCardSet } from '../store/cards.js'
@@ -70,6 +71,8 @@
     width: 90%;
     height: 90%;
     margin: 5%;
+
+    perspective: 1000px;
   }
 </style>
 
@@ -82,7 +85,7 @@
 {#if selectedCard}
   <Backdrop on:close={resetSelection}>
     <div class="selected-card" transition:fly={{ y: 300 }}>
-      <Card number={selectedCard} selected show={showCard} on:select={toggleShowCard} />
+      <SelectedCard number={selectedCard} show={showCard} on:close={toggleShowCard} />
     </div>
   </Backdrop>
 {/if}
