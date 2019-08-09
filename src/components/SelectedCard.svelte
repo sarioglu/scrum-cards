@@ -35,6 +35,8 @@
     left: 0;
     width: 100%;
     height: 100%;
+
+    backface-visibility: hidden;
   }
 
   .front {
@@ -46,7 +48,7 @@
   .back {
     transform: rotateY(180deg);
 
-    background-image: url('./card-bg.jpg');
+    background-image: url('../assets/card-bg.jpg');
     background-size: cover;
     border-radius: 0.5rem;
   }
