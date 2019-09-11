@@ -11,58 +11,22 @@
   export let onClose = () => {}
 </script>
 
-<style>
-  .modal {
-    width: 100%;
-    padding: 1rem 2rem;
-
-    position: absolute;
-    bottom: 0;
-
-    border-radius: 0.5rem;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  .title {
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .radio-button {
-    display: block;
-    padding: 0.25rem 0;
-    margin: 0.25rem 0;
-  }
-
-  .submit-button {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    background-color: #3182ce;
-    color: #ffffff;
-  }
-</style>
-
 <Backdrop on:close={onClose}>
-  <div class="modal" transition:fly={{ y: 300 }}>
-    <div class="title">Settings</div>
+  <div class="w-full absolute px-8 py-4 bottom-0 rounded-lg bg-white shadow-md" transition:fly={{ y: 300 }}>
+    <div class="text-center font-rubik text-2xl mb-4">Settings</div>
     <form
       on:submit|preventDefault={() => {
         currentCardSetName.set(selectedCardSetName)
         onClose()
       }}>
       {#each Object.values(CARD_SET_NAMES) as cardSetName}
-        <label class="radio-button">
+        <label class="block px-0 py-1 mx-0 my-1">
           <input type="radio" bind:group={selectedCardSetName} value={cardSetName} />
           {cardSetName}
         </label>
       {/each}
 
-      <button class="submit-button" type="submit">Save</button>
+      <button class="w-full mt-4 px-4 py-2 rounded bg-blue-600 text-white" type="submit">Save</button>
     </form>
   </div>
 </Backdrop>

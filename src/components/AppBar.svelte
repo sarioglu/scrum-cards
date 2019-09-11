@@ -5,36 +5,16 @@
 </script>
 
 <style>
-  .app-bar {
-    display: flex;
-    align-items: center;
-    height: 4rem;
+  .min-h-64px {
     min-height: 64px;
-    padding: 1rem 2rem;
-
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  .icon {
-    width: 2rem;
-    font-size: 2rem;
-  }
-
-  .title {
-    flex: 1;
-
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.5rem;
   }
 </style>
 
-<div class="app-bar">
-  <div class="icon" />
-  <div class="title">Scrum Poker</div>
+<div class="flex items-center h-16 min-h-64px px-8 py-4 bg-white border-b border-solid border-gray-300">
+  <div class="w-4 text-3xl" />
+  <div class="flex-1 text-center text-2xl font-rubik">Scrum Poker</div>
   <button
-    class="icon"
+    class="w-4 text-3xl"
     on:click={() => {
       settingsOpen = true
     }}>

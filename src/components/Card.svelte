@@ -13,30 +13,8 @@
   export let show = true
 </script>
 
-<style>
-  .card {
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-radius: 0.5rem;
-
-    font-family: 'Rubik', sans-serif;
-    font-size: 3rem;
-    font-weight: 500;
-
-    transition: box-shadow 200ms ease-in;
-  }
-
-  .card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-
-  .selected {
-    font-size: 10rem;
-  }
-
-  .selected.hide {
-    color: transparent;
-  }
-</style>
-
-<button class={`card ${selected ? 'selected' : ''} ${show ? '' : 'hide'}`} on:click={select}>{number}</button>
+<button
+  class="bg-white shadow-md rounded-lg transition hover:shadow-lg font-rubik text-5xl font-medium"
+  on:click={select}>
+  {number}
+</button>

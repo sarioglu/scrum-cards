@@ -31,52 +31,22 @@
 <style>
   .grid {
     display: grid;
+  }
+
+  .grid-gap-4 {
     grid-gap: 1rem;
+  }
+
+  .grid-col-3 {
     grid-template-columns: repeat(3, 1fr);
-
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    flex: 1;
   }
 
-  @media (min-width: 640px) {
-    .grid {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .grid {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .grid {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .grid {
-      max-width: 1280px;
-    }
-  }
-
-  .selected-card {
-    display: grid;
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    margin: 5%;
-
+  .perspective {
     perspective: 1000px;
   }
 </style>
 
-<div class="grid">
+<div class="grid grid-gap-4 grid-col-3 container w-full mx-0 my-auto p-4 flex-1">
   {#each $currentCardSet as number}
     <Card {number} on:select={selectCard} />
   {/each}
@@ -84,7 +54,7 @@
 
 {#if selectedCard}
   <Backdrop on:close={resetSelection}>
-    <div class="selected-card" transition:fly={{ y: 300 }}>
+    <div class="grid absolute w-full h-full p-4 perspective" transition:fly={{ y: 300 }}>
       <SelectedCard number={selectedCard} show={showCard} on:close={toggleShowCard} />
     </div>
   </Backdrop>

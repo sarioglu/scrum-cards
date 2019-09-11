@@ -1,0 +1,9 @@
+@import './styles/tailwind';
+
+.font-rubik {
+  font-family: 'Rubik', sans-serif;
+}
+
+.transition {
+  transition: all 200ms ease-in;
+}
