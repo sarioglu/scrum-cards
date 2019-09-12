@@ -1,5 +1,5 @@
 {
   "compiler": {
-    "css": false
+    "css": true
   }
 }
