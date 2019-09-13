@@ -46,7 +46,7 @@
   }
 </style>
 
-<div class="grid grid-gap-4 grid-col-3 container w-full mx-0 my-auto p-4 flex-1">
+<div class="grid grid-gap-4 grid-col-3 container w-full mx-auto p-4 flex-1">
   {#each $currentCardSet as number}
     <Card {number} on:select={selectCard} />
   {/each}
