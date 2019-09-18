@@ -5,8 +5,8 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "Scope": "/",
-  "start_url": "/",
+  "scope": "/sarioglumeh/scrum-cards/",
+  "start_url": "/sarioglumeh/scrum-cards",
   "icons": [
     {
       "src": "assets/favicon/icon-72x72.png",
