@@ -9,8 +9,6 @@
     })
 
   export let number
-  export let selected = false
-  export let show = true
 </script>
 
 <button
