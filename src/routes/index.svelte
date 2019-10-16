@@ -1,6 +1,7 @@
 <script>
-  import AppBar from './components/AppBar.svelte'
-  import CardGrid from './components/CardGrid.svelte'
+  import Tailwindcss from "../components/Tailwindcss.svelte";
+  import AppBar from "../components/AppBar.svelte";
+  import CardGrid from "../components/CardGrid.svelte";
 </script>
 
 <style>
@@ -18,6 +19,7 @@
 </style>
 
 <div class="wrapper">
+  <Tailwindcss />
   <AppBar />
   <CardGrid />
 </div>
