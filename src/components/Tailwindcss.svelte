@@ -1,10 +1,10 @@
-<style global>
+<style global lang="postcss">
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
 
   .font-rubik {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
 
   .transition {

@@ -1,15 +1,15 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher<{ close: { number: string } }>()
 
   const select = () =>
     dispatch('close', {
       number,
     })
 
-  export let number
-  export let show = true
+  export let number = ''
+  export let show: boolean = true
 </script>
 
 <style>

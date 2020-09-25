@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher<{ close: void }>()
 
   const close = () => dispatch('close')
 </script>

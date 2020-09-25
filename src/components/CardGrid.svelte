@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { fly } from 'svelte/transition'
 
   import Card from './Card.svelte'
@@ -7,10 +7,10 @@
 
   import { currentCardSet } from '../store/cards.js'
 
-  let selectedCard = null
+  let selectedCard = ''
   let showCard = false
 
-  const selectCard = event => {
+  const selectCard = (event: CustomEvent<{ number: string }>) => {
     selectedCard = event.detail.number
   }
 

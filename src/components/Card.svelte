@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher<{ select: { number: string } }>()
 
   const select = () =>
     dispatch('select', {
       number,
     })
 
-  export let number
+  export let number = ''
 </script>
 
 <button

@@ -1,7 +1,6 @@
 # sapper-template
 
-The default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup and webpack.
-
+This is a fork of Sapper's project template to enable usage of Tailwindcss. Refer to [Sapper](https://github.com/sveltejs/sapper) for more info.
 
 ## Getting started
 
@@ -12,16 +11,10 @@ The default [Sapper](https://github.com/sveltejs/sapper) template, available for
 
 ```bash
 # for Rollup
-npx degit "sveltejs/sapper-template#rollup" my-app
+npx degit "sarioglu/sapper-tailwindcss-template#rollup" my-app
 # for webpack
-npx degit "sveltejs/sapper-template#webpack" my-app
+npx degit "sarioglu/sapper-tailwindcss-template#webpack" my-app
 ```
-
-
-### Using GitHub templates
-
-Alternatively, you can use GitHub's template feature with the [sapper-template-rollup](https://github.com/sveltejs/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) repositories.
-
 
 ### Running the project
 
@@ -85,12 +78,14 @@ Sapper uses Rollup or webpack to provide code-splitting and dynamic imports, as 
 
 To start a production version of your app, run `npm run build && npm start`. This will disable live reloading, and activate the appropriate bundler plugins.
 
-You can deploy your application to any environment that supports Node 8 or above. As an example, to deploy to [Now](https://zeit.co/now), run these commands:
+You can deploy your application to any environment that supports Node 10 or above. As an example, to deploy to [Vercel Now](https://vercel.com) when using `sapper export`, run these commands:
 
 ```bash
-npm install -g now
-now
+npm install -g vercel
+vercel
 ```
+
+If your app can't be exported to a static site, you can use the [now-sapper](https://github.com/thgh/now-sapper) builder. You can find instructions on how to do so in its [README](https://github.com/thgh/now-sapper#basic-usage).
 
 
 ## Using external components

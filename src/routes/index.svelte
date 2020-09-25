@@ -1,7 +1,7 @@
-<script>
-  import Tailwindcss from "../components/Tailwindcss.svelte";
-  import AppBar from "../components/AppBar.svelte";
-  import CardGrid from "../components/CardGrid.svelte";
+<script lang="ts">
+  import Tailwindcss from '../components/Tailwindcss.svelte'
+  import AppBar from '../components/AppBar.svelte'
+  import CardGrid from '../components/CardGrid.svelte'
 </script>
 
 <style>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { get } from 'svelte/store'
   import { fly } from 'svelte/transition'
 
