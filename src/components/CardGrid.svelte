@@ -1,17 +1,21 @@
 <script lang="ts">
+  import { onMount, onDestroy } from 'svelte'
   import { fly } from 'svelte/transition'
 
   import Card from './Card.svelte'
   import SelectedCard from './SelectedCard.svelte'
   import Backdrop from './Backdrop.svelte'
 
-  import { currentCardSet } from '../store/cards.js'
+  import { currentCardSet } from '../store/cards'
 
   let selectedCard = ''
   let showCard = false
+  let shakeEvent = null
 
   const selectCard = (event: CustomEvent<{ number: string }>) => {
     selectedCard = event.detail.number
+
+    shakeEvent.start()
   }
 
   const resetSelection = () => {
@@ -20,12 +24,28 @@
   }
 
   const toggleShowCard = () => {
+    debugger
     if (showCard) {
       resetSelection()
+      shakeEvent.stop()
     } else {
       showCard = true
     }
   }
+
+  onMount(async () => {
+    const { default: Shake } = await import('shake.js')
+    shakeEvent = new Shake({
+      threshold: 5,
+      timeout: 100,
+    })
+
+    window.addEventListener('shake', toggleShowCard, false)
+  })
+
+  // onDestroy(() => {
+  //   window.removeEventListener('shake', toggleShowCard, false)
+  // })
 </script>
 
 <style>
@@ -54,7 +74,7 @@
 
 {#if selectedCard}
   <Backdrop on:close={resetSelection}>
-    <div class="grid absolute w-full h-full p-4 perspective" transition:fly={{ y: 300 }}>
+    <div class="grid absolute w-full h-full p-8 perspective" transition:fly={{ y: 300 }}>
       <SelectedCard number={selectedCard} show={showCard} on:close={toggleShowCard} />
     </div>
   </Backdrop>

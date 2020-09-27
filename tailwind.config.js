@@ -1,5 +1,8 @@
+const production = process.env.NODE_ENV !== 'development'
+
 module.exports = {
   purge: {
+    enabled: production,
     mode: 'all',
     content: ['./**/**/*.html', './**/**/*.svelte'],
 
@@ -13,4 +16,4 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-};
+}

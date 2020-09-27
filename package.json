@@ -12,6 +12,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
+    "shake.js": "^1.2.2",
     "sirv": "^1.0.0"
   },
   "devDependencies": {
