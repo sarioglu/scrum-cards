@@ -36,8 +36,8 @@
   onMount(async () => {
     const { default: Shake } = await import('shake.js')
     shakeEvent = new Shake({
-      threshold: 5,
-      timeout: 100,
+      threshold: 10,
+      timeout: 1000,
     })
 
     window.addEventListener('shake', toggleShowCard, false)
